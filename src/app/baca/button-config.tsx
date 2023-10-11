@@ -1,7 +1,7 @@
 'use client'
 
 import { SettingsIcon } from '@chakra-ui/icons'
-import { Button, Checkbox, CheckboxGroup, Divider, FormControl, FormLabel, HStack, Heading, IconButton, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, SimpleGrid, Stack, useDisclosure } from '@chakra-ui/react'
+import { Button, Card, Checkbox, CheckboxGroup, Divider, FormControl, FormLabel, IconButton, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, SimpleGrid, Stack, useDisclosure } from '@chakra-ui/react'
 import React from 'react'
 import { Controller, useFormContext } from 'react-hook-form'
 import { CONSONANTS, VOCALS } from '../shared'
@@ -22,7 +22,6 @@ const ConfigButton = () => {
         <ModalContent>
           <ModalHeader>Konfigurasi</ModalHeader>
           <Divider />
-          <ModalCloseButton />
           <ModalBody>
             <Stack>
               <Controller

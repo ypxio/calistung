@@ -64,7 +64,7 @@ const ReadPage = () => {
           p={4}
           alignItems="center"
         >
-          <Heading size="md" color="purple.500">CALISTUNG</Heading>
+          <Heading size="md" color="purple.500">CALISTUNG - BACA</Heading>
           <Spacer />
           <ConfigButton />
         </Flex>

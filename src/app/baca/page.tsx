@@ -58,16 +58,16 @@ const ReadPage = () => {
         direction={"column"}
       >
         <Flex
-          bg="pink.200"
+          bg="purple.200"
           p={4}
           alignItems="center"
         >
-          <Heading size="md" color="pink.500">CALISTUNG</Heading>
+          <Heading size="md" color="purple.500">CALISTUNG</Heading>
           <Spacer />
           <ConfigButton />
         </Flex>
         <Flex
-          bg="pink.50"
+          bg="purple.50"
           flex={"auto"}
           alignItems={"center"}
           justifyContent={"center"}
@@ -78,7 +78,7 @@ const ReadPage = () => {
             size={"4xl"}
             textTransform={"uppercase"}
             letterSpacing={12}
-            color="pink.400"
+            color="purple.400"
           >
             {generated}
           </Heading>

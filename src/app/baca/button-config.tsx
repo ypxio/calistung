@@ -39,21 +39,21 @@ const ConfigButton = () => {
                       <SimpleGrid columns={3}>
                         <Stack>
                           {CONSONANTS.slice(0, 7).map((c, i) => (
-                            <Checkbox colorScheme='pink' key={c} value={c}>
+                            <Checkbox colorScheme='purple' key={c} value={c}>
                               {c}
                             </Checkbox>
                           ))}
                         </Stack>
                         <Stack>
                           {CONSONANTS.slice(7, 14).map((c, i) => (
-                            <Checkbox colorScheme='pink' key={c} value={c}>
+                            <Checkbox colorScheme='purple' key={c} value={c}>
                               {c}
                             </Checkbox>
                           ))}
                         </Stack>
                         <Stack>
                           {CONSONANTS.slice(14).map((c, i) => (
-                            <Checkbox colorScheme='pink' key={c} value={c}>
+                            <Checkbox colorScheme='purple' key={c} value={c}>
                               {c}
                             </Checkbox>
                           ))}
@@ -77,21 +77,21 @@ const ConfigButton = () => {
                       <SimpleGrid columns={3}>
                         <Stack>
                           {VOCALS.slice(0, 2).map((c, i) => (
-                            <Checkbox colorScheme='pink' key={c} value={c}>
+                            <Checkbox colorScheme='purple' key={c} value={c}>
                               {c}
                             </Checkbox>
                           ))}
                         </Stack>
                         <Stack>
                           {VOCALS.slice(2, 4).map((c, i) => (
-                            <Checkbox colorScheme='pink' key={c} value={c}>
+                            <Checkbox colorScheme='purple' key={c} value={c}>
                               {c}
                             </Checkbox>
                           ))}
                         </Stack>
                         <Stack>
                           {VOCALS.slice(4).map((c, i) => (
-                            <Checkbox colorScheme='pink' key={c} value={c}>
+                            <Checkbox colorScheme='purple' key={c} value={c}>
                               {c}
                             </Checkbox>
                           ))}
@@ -105,7 +105,7 @@ const ConfigButton = () => {
           </ModalBody>
           <Divider />
           <ModalFooter>
-            <Button colorScheme='pink' onClick={onClose}>
+            <Button colorScheme='purple' onClick={onClose}>
               Close
             </Button>
           </ModalFooter>

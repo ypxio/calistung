@@ -4,7 +4,7 @@ import React from 'react'
 import ConfigButton from './button-config'
 import { FormProvider, useForm } from 'react-hook-form'
 import { CONSONANTS, VOCALS } from '../shared';
-import { Flex, Heading, Spacer } from '@chakra-ui/react';
+import { Button, Flex, Heading, Spacer } from '@chakra-ui/react';
 
 const DEFAULT_VALUES = {
   consonants: CONSONANTS,
@@ -76,14 +76,17 @@ const ReadPage = () => {
           cursor={"pointer"}
           onClick={generate}
         >
-          <Heading
+          {text.length > 0 ? <Heading
             size={"4xl"}
             textTransform={"uppercase"}
             letterSpacing={12}
             color="purple.400"
+            userSelect={"none"}
           >
             {generated}
-          </Heading>
+          </Heading> : (
+            <Button colorScheme="purple" size="lg">MULAI</Button>
+          )}
         </Flex>
       </Flex>
     </FormProvider>

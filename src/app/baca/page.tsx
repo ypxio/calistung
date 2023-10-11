@@ -4,9 +4,7 @@ import React from 'react'
 import ConfigButton from './button-config'
 import { FormProvider, useForm } from 'react-hook-form'
 import { CONSONANTS, VOCALS } from '../shared';
-import { Button, Flex, Heading, Spacer } from '@chakra-ui/react';
-
-const ls = window.localStorage;
+import { Flex, Heading, Spacer } from '@chakra-ui/react';
 
 const DEFAULT_VALUES = {
   consonants: CONSONANTS,
@@ -14,21 +12,27 @@ const DEFAULT_VALUES = {
 }
 
 const ReadPage = () => {
-  React.useEffect(() => {
-    if (!ls.getItem("config")) {
-      ls.setItem("config", JSON.stringify(DEFAULT_VALUES))
-    }
-  }, [])
   const methods = useForm<{
     consonants: string[]
     vocals: string[]
   }>({
-    defaultValues: JSON.parse(ls.getItem("config") || JSON.stringify(DEFAULT_VALUES))
+    defaultValues: JSON.parse(JSON.stringify(DEFAULT_VALUES))
   })
+  React.useEffect(() => {
+    if (typeof window !== "undefined" && window.localStorage) {
+      if (!window.localStorage.getItem("config")) {
+        window.localStorage.setItem("config", JSON.stringify(DEFAULT_VALUES))
+      } else {
+        methods.reset(JSON.parse(window.localStorage.getItem("config") || JSON.stringify(DEFAULT_VALUES)))
+      }
+    }
+  }, [])
   const { watch, getValues } = methods;
   const watchedValues = watch();
   React.useEffect(() => {
-    ls.setItem("config", JSON.stringify(watchedValues))
+    if (typeof window !== "undefined" && window.localStorage) {
+      window.localStorage.setItem("config", JSON.stringify(watchedValues))
+    }
   }, [watchedValues])
   const [text, setText] = React.useState<string[]>([])
   const generate = () => {

@@ -37,15 +37,15 @@ const ReadPage = () => {
   const [text, setText] = React.useState<string[]>([])
   const generate = () => {
     const { consonants, vocals } = getValues();
-    const randomizedConsonants = consonants.sort( () => .5 - Math.random() )
-    const randomizedVocals = vocals.sort( () => .5 - Math.random() )
+    const randomizedConsonants = consonants.sort(() => .5 - Math.random())
+    const randomizedVocals = vocals.sort(() => .5 - Math.random())
     setText(prev => [
       ...prev,
       [
         randomizedConsonants[0],
         randomizedVocals[0],
         randomizedConsonants[1],
-        randomizedVocals[1],
+        randomizedVocals[1] || randomizedVocals[0],
       ].join('')
     ])
   }

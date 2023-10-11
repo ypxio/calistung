@@ -34,7 +34,12 @@ const ConfigButton = () => {
                     <CheckboxGroup
                       defaultValue={field.value}
                       value={field.value}
-                      onChange={field.onChange}
+                      onChange={value => {
+                        if (field.value.length === 1 && value.length === 0) {
+                          return alert("Minimal harus dipilih 1 huruf konsonan")
+                        }
+                        field.onChange(value)
+                      }}
                     >
                       <SimpleGrid columns={3}>
                         <Stack>
@@ -72,7 +77,12 @@ const ConfigButton = () => {
                     <CheckboxGroup
                       defaultValue={field.value}
                       value={field.value}
-                      onChange={field.onChange}
+                      onChange={value => {
+                        if (field.value.length === 1 && value.length === 0) {
+                          return alert("Minimal harus dipilih 1 huruf vokal")
+                        }
+                        field.onChange(value)
+                      }}
                     >
                       <SimpleGrid columns={3}>
                         <Stack>

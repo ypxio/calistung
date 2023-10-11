@@ -44,8 +44,10 @@ const ReadPage = () => {
       [
         randomizedConsonants[0],
         randomizedVocals[0],
-        randomizedConsonants[1],
+        randomizedConsonants[1] || randomizedConsonants[0],
         randomizedVocals[1] || randomizedVocals[0],
+        randomizedConsonants[2] || randomizedConsonants[1] || randomizedConsonants[0],
+        randomizedVocals[2] || randomizedVocals[1] || randomizedVocals[0],
       ].join('')
     ])
   }

@@ -1,8 +1,10 @@
-import './globals.css'
+// import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Pangolin } from 'next/font/google'
+import { Providers } from './providers'
 
 const inter = Inter({ subsets: ['latin'] })
+const pangolin = Pangolin({ weight: "400", subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Calistung',
@@ -16,7 +18,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={pangolin.className}>
+        <Providers>
+          {children}
+        </Providers>
+      </body>
     </html>
   )
 }

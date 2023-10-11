@@ -11,7 +11,7 @@ const ConfigButton = () => {
   const { control } = useFormContext()
   return (
     <>
-      <IconButton colorScheme="pink" aria-label='settings' icon={<SettingsIcon />} onClick={onOpen}  />
+      <IconButton colorScheme="purple" aria-label='settings' icon={<SettingsIcon />} onClick={onOpen}  />
       <Modal
         isOpen={isOpen}
         onClose={onClose}
